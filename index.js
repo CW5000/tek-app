@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 })
 
 /// Main method - returns all state information by calling upon state API.
-app.get('/ByState/:stateID([a-z][A-Z])', function (req, res){
+app.get('/ByState/:stateID([a-z][A-Z]{1,2})', function (req, res){
     axios.get('http://services.groupkt.com/state/get/USA/' + req.param('stateID'))
     .then(response => {
         res.send(response.data);
