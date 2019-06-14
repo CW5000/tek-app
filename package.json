@@ -1,0 +1,19 @@
+{
+  "name": "tek-app",
+  "version": "1.0.0",
+  "description": "Homework Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CW5000/tek-app.git"
+  },
+  "author": "Colin W. Fries",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CW5000/tek-app/issues"
+  },
+  "homepage": "https://github.com/CW5000/tek-app#readme"
+}
