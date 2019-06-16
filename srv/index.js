@@ -1,4 +1,3 @@
-const cors = require('cors');
 const axios = require('axios');
 const express = require('express');
 const app = express();
@@ -28,42 +27,6 @@ app.get('/off', function(req, res) {
     server.close();
 });
 
-// // /// Main method - returns all state information by calling upon state API.
-// app.get('/ByStateAbbrev/:abbrev', function (req, res){
-//     axios.get('http://services.groupkt.com/state/get/USA/' + req.param('abbrev'))
-//     .then(response => {
-//         res.send(response.data);
-//         console.log(req.params);
-//     })
-//     .catch(err => {
-//         res.send({err});
-//     });
-// });
-
-/*
-Model UI.
-            `
-                <div>
-                <h1>Search Results for : ` + req.params.abbrev + `</h1>
-                <p id="result">Largest City: 
-                    <strong id="largest">` + response.RestResponse.result.largest_city + ` </strong></p>
-                <p id="result">Capital City: 
-                    <strong id="capital">` + response.RestResponse.result.capital + ` </strong></p>
-                </div>
-                <style>
-                #result {
-                    background-color: white;
-                    color: black;
-                    padding:5px;
-                    text-align:left;
-                }
-                #largest, #capital {
-                    color: blue;
-                }
-                </style>
-            `
-*/
-
 /* Main method - returns all state information by calling upon state API.
 It even comes with a low-end UI.    
 (No one has ever accused me of being a front-end developer).
@@ -78,7 +41,7 @@ app.get('/ByState/:state', ((req, res) => {
         console.log(req.params);
     })
     .catch(err => {
-        res.status(404).json({err});
+        res.status(200).json({err});
     });
 }));
 

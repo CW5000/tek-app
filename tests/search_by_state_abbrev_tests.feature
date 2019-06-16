@@ -29,16 +29,16 @@ Scenario Outline: Prove system fails gracefully through validation of negative s
 	
 	Examples:
 		| abbrev	| status	| excuse												|
-		| aa		| 404		| No matching state found for requested code aa			|
-		| a			| 404		| No matching state found for requested code a			|
-		| aaa		| 404		| No matching state found for requested code aaa		|
-		| $$		| 404		| No matching state found for requested code $$			|
-		| 11		| 404		| No matching state found for requested code 11			|
-		| a2		| 404		| No matching state found for requested code a2			|
-		| a$		| 404		| No matching state found for requested code a$			|
-		| $1		| 404		| No matching state found for requested code $1			|
-		| Wyyoming	| 404    	| No matching state found for requested code Wyyoming 	|
-		| H@wa11	| 404    	| No matching state found for requested code H@wa11 	|
+		| aa		| 200		| No matching state found for requested code aa			|
+		| a			| 200		| No matching state found for requested code a			|
+		| aaa		| 200		| No matching state found for requested code aaa		|
+		| $$		| 200		| No matching state found for requested code $$			|
+		| 11		| 200		| No matching state found for requested code 11			|
+		| a2		| 200		| No matching state found for requested code a2			|
+		| a$		| 200		| No matching state found for requested code a$			|
+		| $1		| 200		| No matching state found for requested code $1			|
+		| Wyyoming	| 200    	| No matching state found for requested code Wyyoming 	|
+		| H@wa11	| 200    	| No matching state found for requested code H@wa11 	|
 				
 Scenario Outline: Prove system fails gracefully through validation of more negative scenarios.
     Given path '/ByState/<abbrev>'
