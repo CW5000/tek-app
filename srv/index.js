@@ -1,3 +1,4 @@
+const cors = require('cors');
 const axios = require('axios');
 const express = require('express');
 const app = express();
@@ -68,6 +69,7 @@ It even comes with a low-end UI.
 (No one has ever accused me of being a front-end developer).
 */
 app.get('/ByState/:state', ((req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     validator(req.params.state)
     .then(matchState)
     .then(executeRequest)

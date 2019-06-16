@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>TEK App Front-End</title>
+		<script src='https://unpkg.com/vue'></script>
+		<script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+	</head>
+	<body>
+		<div id="app">
+				<h3>State Abbreviation or Name Search</h3>
+				<label>Enter a state name or abbreviation</label>
+				<input v-model="targetState" name="inputData" placeholder='you can do it!'>
+				<button v-on:click.prevent="loadInfo" type='submit' name='btnSubmit'>Submit</button>
+				<p>Target State: {{ targetState }}</p>
+				<p><label>Largest City:</label> <label name='largest'>{{ status_1 }}</label></p>
+				<p><label>Capital City:</label> <label name='capital'>{{ status_2 }}</label></p>
+		</div>
+		<script>
+			var viewModel = new Vue ({
+				el: '#app',
+				data: {
+					targetState: 'NA',
+					status_1: 'Standing by..',
+					status_2: 'Standing by..'
+				},
+				created: function() {
+					//this.loadInfo();
+				},
+				methods: {
+					loadInfo: function (targetState) {
+						//this.status_1 = 'Loading...';
+						var viewModel = this;
+						console.log('This is the target state:' + this.targetState);
+						axios.get('http://localhost:4000/ByState/' + this.targetState )
+						.then(function (response) {
+							viewModel.status_1 = response.data.result.largest_city;
+							viewModel.status_2 = response.data.result.capital;
+						})
+						.catch(function (error) {
+							viewModel.status = error.message;
+						});
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
