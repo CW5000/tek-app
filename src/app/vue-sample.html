@@ -11,8 +11,8 @@
 				<input v-model="targetState" name="inputData" placeholder='you can do it!'>
 				<button v-on:click.prevent="loadInfo" type='submit' name='btnSubmit'>Submit</button>
 				<p>Target State: {{ targetState }}</p>
-				<p><label>Largest City:</label> <label v-on:submit.clear name='largest'>{{ largest_city }}</label></p>
-				<p><label>Capital City:</label> <label name='capital'>{{ capital_city }}</label></p>
+				<p><label>Largest City:</label> <label v-on:submit.clear v-bind:value='largest_city' name='largest' >{{ largest_city }}</label></p>
+				<p><label>Capital City:</label> <label v-on:submit.clear v-bind:value='capital_city' name='capital'>{{ capital_city }}</label></p>
 		</div>
 		<script>
 			var viewModel = new Vue ({

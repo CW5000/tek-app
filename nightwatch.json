@@ -1,0 +1,18 @@
+{
+    "src_folders" : ["src/tests"],
+  
+    "webdriver" : {
+      "start_process": true,
+      "server_path": "C:\\Users\\Colin\\repos\\tek-app\\node_modules\\chromedriver\\bin\\chromedriver.exe",
+      "port": 9515
+    },
+    
+    "test_runner": "mocha",
+    "test_settings" : {
+      "default" : {
+        "desiredCapabilities": {
+          "browserName": "chrome"
+        }
+      }
+    }
+  }

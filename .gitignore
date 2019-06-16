@@ -88,4 +88,10 @@ typings/
 .dynamodb/
 
 #Test logs
-tests/target
+srv/tests/target
+
+#Cypress Examples
+cypress/integration/examples
+
+# test reports
+/reports
