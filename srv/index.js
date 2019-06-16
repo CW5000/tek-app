@@ -27,8 +27,7 @@ app.get('/off', function(req, res) {
     server.close();
 });
 
-/* Main method - returns all state information by calling upon state API.
-It even comes with a low-end UI.    
+/* Main method - returns all state information by calling upon state API.   
 (No one has ever accused me of being a front-end developer).
 */
 app.get('/ByState/:state', ((req, res) => {

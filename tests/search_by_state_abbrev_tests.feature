@@ -3,6 +3,11 @@ Feature: basic tests
 Background:
     * url 'http://localhost:4000'
 
+Scenario: Prove that the service is active.
+    Given path ''
+    When method get
+    Then status 200
+	
 Scenario Outline: Prove system works correctly through validation of positive scenarios.
     Given path '/ByState/<abbrev>'
     When method get
