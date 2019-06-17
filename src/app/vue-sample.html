@@ -8,9 +8,9 @@
 		<div id="app">
 				<h3>State Abbreviation or Name Search</h3>
 				<label>Enter a state name or abbreviation</label>
-				<input v-model="targetState" name="inputData" placeholder='you can do it!'>
+				<input type="text" v-model="targetState" name="inputData" placeholder='you can do it!' maxlength=21 v-bind:text='targetState'>
 				<button v-on:click.prevent="loadInfo" type='submit' name='btnSubmit'>Submit</button>
-				<p>Target State: {{ targetState }}</p>
+				<p>Target State: <label name='target'>{{ targetState }}</label></p>
 				<p><label>Largest City:</label> <label v-on:submit.clear v-bind:value='largest_city' name='largest' >{{ largest_city }}</label></p>
 				<p><label>Capital City:</label> <label v-on:submit.clear v-bind:value='capital_city' name='capital'>{{ capital_city }}</label></p>
 		</div>
