@@ -1,6 +1,15 @@
 # tek-app
 This is my repository.
 
+Setup Instructions
+1. Download or clone repo from GitHub (if you've gotten this far, congratuations).
+2. Install the project by running the following from the project root: "npm install".
+3. Install the package http-server globally by running "npm install http-server -g". 
+    Note: this may result in a security challenge. If you're running on a corporate computer and have no admin rights, I'm sorry. If you have admin rights, then you can use the following work-around: If running on Windows, run powershell and execute the following command "Set-ExecutionPolicy -ExecutionPolicy AllSigned" (prompt if suspect) or "Set-ExecutionPolicy -ExecutionPolicy Bypass" (dangerous). 
+    I think Mac users get a pass here.
+5. Run "node index.js".
+6. Navigate to "localhost:<port>/vue-sample.html" (where <port> is the port you started the server on).
+
 Running node index.js from the aforementioned file's directory starts the service. This is a pre-req for everything.
 
 Running java -Jar karate-0.9.3.jar <test name>.feature (or whatever) executes the API test suite.
